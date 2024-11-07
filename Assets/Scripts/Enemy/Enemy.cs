@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform[] _waypoints;
 
+    [SerializeField] private float _attackRadius = 1f;
+
     [Header("Player Detection")]
     [SerializeField] private float _detectionRadius = 10f;
     [SerializeField] private LayerMask _playerLayerMask;
@@ -33,13 +35,19 @@ public class Enemy : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, _detectionRadius, _playerLayerMask);
         
         if (colliders.Length > 0)
-            _agent.SetDestination(colliders[0].transform.position);
+        {
+            if (Vector3.Distance(transform.position, colliders[0].transform.position) <= _attackRadius)
+            {
+                _agent.SetDestination(transform.position);
+                SlimeControll player = colliders[0].transform.GetComponent<SlimeControll>();
+
+                if (player != null)
+                    player.takeDamage();
+            }
+            else
+                _agent.SetDestination(colliders[0].transform.position);
+        }
         else
             _agent.SetDestination(_waypoints[_waypointIndex].position);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
     }
 }

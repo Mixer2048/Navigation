@@ -19,4 +19,9 @@ public class SlimeAnimation : MonoBehaviour
         else
             _anim.SetInteger("state", 0);
     }
+
+    public void dieAnimation()
+    {
+        _anim.SetInteger("state", 3);
+    }
 }

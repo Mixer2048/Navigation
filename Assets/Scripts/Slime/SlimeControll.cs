@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class SlimeControll : MonoBehaviour
 {
+    public UnityEvent onDie;
     public Camera cam;
     public LayerMask ground;
     NavMeshAgent agent;
+    bool dead;
 
     void Start()
     {
@@ -26,5 +29,13 @@ public class SlimeControll : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+    }
+    
+    public void takeDamage()
+    {
+        dead = true;
+        agent.SetDestination(transform.position);
+        onDie?.Invoke();
+        Destroy(this, 2);
     }
 }
