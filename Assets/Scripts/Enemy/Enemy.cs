@@ -31,10 +31,15 @@ public class Enemy : MonoBehaviour
         }
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, _detectionRadius, _playerLayerMask);
-
+        
         if (colliders.Length > 0)
             _agent.SetDestination(colliders[0].transform.position);
         else
             _agent.SetDestination(_waypoints[_waypointIndex].position);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
     }
 }
