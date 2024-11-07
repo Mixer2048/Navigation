@@ -20,8 +20,13 @@ public class SlimeAnimation : MonoBehaviour
             _anim.SetInteger("state", 0);
     }
 
-    public void dieAnimation()
+    public void PlayDieAnimation()
     {
         _anim.SetInteger("state", 3);
+    }
+
+    public void PlayAttackAnimation()
+    {
+        _anim.SetInteger("state", 2);
     }
 }

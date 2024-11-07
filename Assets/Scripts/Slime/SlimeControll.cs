@@ -19,14 +19,17 @@ public class SlimeControll : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (dead == false)
         {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, 1000f, ground))
+            if (Input.GetMouseButtonDown(0))
             {
-                agent.SetDestination(hit.point);
+                RaycastHit hit;
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 1000f, ground))
+                {
+                    agent.SetDestination(hit.point);
+                }
             }
         }
     }
@@ -36,6 +39,6 @@ public class SlimeControll : MonoBehaviour
         dead = true;
         agent.SetDestination(transform.position);
         onDie?.Invoke();
-        Destroy(this, 2);
+        Destroy(this.gameObject, 2);
     }
 }
