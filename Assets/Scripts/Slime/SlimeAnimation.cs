@@ -12,7 +12,7 @@ public class SlimeAnimation : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (_agent.velocity.magnitude > 0.1f)
             _anim.SetInteger("state", 1);

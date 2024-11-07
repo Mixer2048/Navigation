@@ -2066,6 +2066,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1992857981}
+    - targetCorrespondingSourceObject: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992857982}
   m_SourcePrefab: {fileID: 100100000, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
 --- !u!4 &1992857976 stripped
 Transform:
@@ -2153,6 +2156,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a90327d6c2ed3043b907e616a63c17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1992857982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992857977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403c616b2c584534aac4b98bbdb12c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waypoints:
+  - {fileID: 962620109}
+  - {fileID: 1282463270}
+  - {fileID: 269831655}
+  - {fileID: 1853256487}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
