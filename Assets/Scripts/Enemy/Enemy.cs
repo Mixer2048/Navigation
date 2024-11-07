@@ -40,7 +40,10 @@ public class Enemy : MonoBehaviour
         if (colliders.Length > 0)
         {
             if (Vector3.Distance(transform.position, colliders[0].transform.position) <= _attackRadius)
+            {
                 _agent.SetDestination(transform.position);
+                OnAttack?.Invoke();
+            }
             else
                 _agent.SetDestination(colliders[0].transform.position);
         }
@@ -57,10 +60,7 @@ public class Enemy : MonoBehaviour
             SlimeControll player = colliders[0].transform.GetComponent<SlimeControll>();
 
             if (player != null)
-            {
                 player.takeDamage();
-                OnAttack?.Invoke();
-            }
         }
     }
 }

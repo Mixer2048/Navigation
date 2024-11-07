@@ -10,7 +10,7 @@ public class SlimeControll : MonoBehaviour
     public Camera cam;
     public LayerMask ground;
     NavMeshAgent agent;
-    bool dead;
+    bool dead = false;
 
     void Start()
     {
@@ -39,6 +39,6 @@ public class SlimeControll : MonoBehaviour
         dead = true;
         agent.SetDestination(transform.position);
         onDie?.Invoke();
-        Destroy(this.gameObject, 2);
+        Destroy(this.gameObject, 1);
     }
 }

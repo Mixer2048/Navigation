@@ -2263,7 +2263,7 @@ MonoBehaviour:
   - {fileID: 1282463270}
   - {fileID: 269831655}
   - {fileID: 1853256487}
-  _attackRadius: 2
+  _attackRadius: 1.5
   _detectionRadius: 10
   _playerLayerMask:
     serializedVersion: 2
