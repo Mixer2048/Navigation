@@ -1499,23 +1499,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1758517340920823382, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2653710389412148474, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3590347296323587964, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5345283121177989438, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6008848281683160717, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6312573360258431772, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_LocalScale.x
@@ -1575,11 +1575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6688149642241925542, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7393486419919309236, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7497110113909437751, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1587,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588663013591350367, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8232614543835699760, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1603,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437696016901413969, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9011977493725603791, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2050,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_01_MeltalHelmet
       objectReference: {fileID: 0}
+    - target: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2115,7 +2119,7 @@ NavMeshAgent:
   m_Acceleration: 200
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
