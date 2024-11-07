@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
             {
                 _agent.SetDestination(transform.position);
                 OnAttack?.Invoke();
-                Debug.Log("attack");
             }
             else
                 _agent.SetDestination(colliders[0].transform.position);

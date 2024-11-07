@@ -7,10 +7,16 @@ using UnityEngine.Events;
 public class SlimeControll : MonoBehaviour
 {
     public UnityEvent onDie;
+    public UnityEvent OnCollect;
+
     public Camera cam;
     public LayerMask ground;
     NavMeshAgent agent;
     bool dead = false;
+
+    private int _detectionRadius = 2;
+    [SerializeField] private LayerMask _collectableLayerMask;
+    Collider[] collectablesColliders;
 
     void Start()
     {
@@ -31,6 +37,8 @@ public class SlimeControll : MonoBehaviour
                     agent.SetDestination(hit.point);
                 }
             }
+
+            CheckCollectables();
         }
     }
     
@@ -40,5 +48,34 @@ public class SlimeControll : MonoBehaviour
         agent.SetDestination(transform.position);
         onDie?.Invoke();
         Destroy(this.gameObject, 1);
+    }
+
+    public void CollectItem()
+    {
+        if (collectablesColliders.Length > 0)
+        {
+            Collectable item = collectablesColliders[0].GetComponent<Collectable>();
+
+            if (item != null)
+                item.TakeItem();
+        }
+    }
+
+    private void CheckCollectables()
+    {
+        collectablesColliders = Physics.OverlapSphere(transform.position, _detectionRadius, _collectableLayerMask);
+
+        if (collectablesColliders.Length > 0)
+        {
+            agent.SetDestination(transform.position);
+            agent.transform.LookAt(collectablesColliders[0].transform);
+            OnCollect?.Invoke();
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
     }
 }
