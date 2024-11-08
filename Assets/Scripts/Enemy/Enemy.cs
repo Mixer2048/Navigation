@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour, IInteractor
+public class Enemy : MonoBehaviour
 {
     public UnityEvent OnAttack;
 
@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour, IInteractor
             if (Vector3.Distance(transform.position, colliders[0].transform.position) <= _attackRadius)
             {
                 _agent.SetDestination(transform.position);
+                _agent.transform.LookAt(colliders[0].transform);
                 OnAttack?.Invoke();
             }
             else
@@ -49,11 +50,6 @@ public class Enemy : MonoBehaviour, IInteractor
         }
         else
             _agent.SetDestination(_waypoints[_waypointIndex].position);
-    }
-
-    public void Interact()
-    {
-        Attack();
     }
 
     public void Attack()

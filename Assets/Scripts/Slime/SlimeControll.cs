@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class SlimeControll : MonoBehaviour, IInteractor
+public class SlimeControll : MonoBehaviour
 {
     public UnityEvent onDie;
     public UnityEvent OnCollect;
@@ -48,11 +48,6 @@ public class SlimeControll : MonoBehaviour, IInteractor
         agent.SetDestination(transform.position);
         onDie?.Invoke();
         Destroy(this.gameObject, 1);
-    }
-
-    public void Interact()
-    {
-
     }
 
     public void CollectItem()
