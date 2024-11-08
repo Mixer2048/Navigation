@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IInteractor
 {
     public UnityEvent OnAttack;
 
@@ -49,6 +49,11 @@ public class Enemy : MonoBehaviour
         }
         else
             _agent.SetDestination(_waypoints[_waypointIndex].position);
+    }
+
+    public void Interact()
+    {
+        Attack();
     }
 
     public void Attack()
